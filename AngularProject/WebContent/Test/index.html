@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Test</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+
+    <script src="dashboardctrl.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="http://cdn.oesmith.co.uk/morris-0.4.1.min.js"></script>
+
+
+</head>
+
+<body ng-app="myApp" ng-controller="dashBoardCtrl">
+<div class="sidebar">
+  <span class="btn pull-right" ng-click="Sidebar()" ng-hide="isSidebarOpen">
+    <i class="fa fa-angle-double-left"></i> </span>
+    <span class="btn pull-right" ng-click="Sidebar()" ng-show="isSidebarOpen">
+    <i class="fa fa-angle-double-right"></i> </span>
+    <ul ng-hide="isSidebarOpen">
+        <li ng-repeat="menu in sideMenu"><a href="#">
+            <i class={{menu.class}}></i>
+            <span>{{menu.label}}</span>
+            <span class="label label-primary pull-right">{{menu.value}}</span>
+        </a>
+            <ul class="treeview-menu">
+                <li ng-repeat="insideMenu in sideMenu.innerData">
+                    <a href="#"><i class="fa fa-circle-o">{{insideMenu}}</i>
+                    </a></li>
+
+            </ul>
+        </li>
+
+    </ul>
+</div>
+<div class="content-wrapper">
+    <div class="content-head">
+        <div class="topNavDiv"><p><span style="color:#29a2d8"><b>Dashboard</b></span> >
+            <span style="color:#29a2d8"><b>Template</b></span> > <span>Dashboard</span></p></div>
+        <h3><i class="fa fa-dashboard"></i>Dashboard <i class="fa fa-info-circle"></i> <span><input type="text"
+                                                                                                    placeholder="search through here"></span>
+        </h3>
+
+    </div>
+    <div class="content">
+        <div class="row">
+            <div class="col-md-3 col-sm-3 col-xs-12" ng-repeat="tile in rowTileData" ng-click="tileRender($index)">
+                <div class={{tile.mainbackground}}>
+                <span class={{tile.background}}>
+                  <i class={{tile.icon}}></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text"><strong>{{tile.label}}</strong><label class="pull-right ">{{tile.count}}</label></span>
+                  <span class="info-box-number">{{tile.number}}
+                  <label class="pull-right percentLabel">{{tile.percentage}}<i
+                          class={{tile.percentIcon}}></i></label></span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <!--<div id="container" style="width:530px; height: 400px; margin: 0 auto"></div>-->
+                <iframe class="iframe-box" id="barframeId" ng-src="templates/container.html"
+                        style="border:none;width:540px; height: 412px; "></iframe>
+            </div>
+            <div class="col-md-3">
+                <div id="pieChart1"></div>
+            </div>
+            <div class="col-md-3">
+                <div id="pieChart2"></div>
+
+            </div>
+        </div>
+    </div>
+    <div class="clearFix">
+        <div class="col-md-3">
+            <!-- Info Boxes Style 2 -->
+            <div ng-repeat="tile in columnTileData">
+                <div class={{tile.background}}>
+                <span class="info-box-icon">
+                  <i class={{tile.icon}}></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">{{tile.label}}<label
+                                class="pull-right ">{{tile.count}}</label></span>
+                  <span class="info-box-number">{{tile.number}}
+                      <label class="pull-right percentLabel">{{tile.percentage}}<i
+                              class={{tile.percentIcon}}></i></label></span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <!--<div id="linechart" style="width:800px; height: 400px; margin: 0 auto"></div>-->
+            <iframe class="iframe-box" id="lineframeId" ng-src="templates/lineChart.html"
+                    style="border:none;width:800px; height: 400px; margin: 0 auto"></iframe>
+        </div>
+
+
+    </div>
+</div>
+
+</body>
+
+</html>

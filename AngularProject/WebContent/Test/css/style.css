@@ -1,0 +1,237 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	margin:0;
+	padding:0;
+	background:#ecf0f5;
+}
+.sidebar{
+    left: 0;
+    min-height: 100%;
+    
+    position: absolute;
+    top: 0;
+     background:#c7d3dc;
+    width: 230px;
+    z-index: 810;
+    border-top: 4px solid #334561;
+}
+.sidebar ul{
+	list-style:none;
+	margin:0;
+	padding:0;
+	float:left;
+	width:100%;
+	
+}
+.sidebar ul li{
+	float:left;
+	width:100%;
+	margin:0;
+	padding:0;
+}
+.sidebar ul li a{
+	padding:10px 15px;
+	margin:0;
+	width:100%;
+	box-sizing:border-box;
+	border-bottom:1px solid #9cb3c4;
+	border-left:5px solid #c7d3dc;
+	color:#355273;
+	font-size:14px;
+	float:left;
+}
+.sidebar ul li ul{
+	display:none;
+}
+.sidebar ul li a i{
+	margin-right:15px;
+}
+.sidebar ul li a:hover{
+	text-decoration:none;
+	border-left:5px solid #355273;
+}
+.content-wrapper{
+    border-top: 4px solid #334561;
+	-webkit-transition: -webkit-transform .3s ease-in-out, margin .3s ease-in-out;
+	-moz-transition: -moz-transform .3s ease-in-out, margin .3s ease-in-out;
+	-o-transition: -o-transform .3s ease-in-out, margin .3s ease-in-out;
+	transition: transform .3s ease-in-out, margin .3s ease-in-out;
+	margin-left: 230px;
+	z-index: 820
+
+}
+.content-head{
+    padding: 15px;
+    border-bottom: 1px solid rgba(156, 152, 152, 0.65);
+}
+.content-head .fa-dashboard{
+    font-size: 29px;
+}
+.content-head input{
+    float: right;
+    border: 1.2px solid #425c88;
+    border-left: 4px solid #425c88;
+    font-size: 15px;
+    padding: 4px;
+}
+.content {
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 250px;
+    padding: 15px;
+}
+.info-box {
+	display: block;
+	min-height: 90px;
+	background: #fff;
+	width: 100%;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+	border-radius: 2px;
+	margin-bottom: 15px;
+	color:#fff;
+	
+}
+.info-box-text{
+	margin:20px 0 0 0;
+	float:left;
+	width:100%;
+}
+.info-box small {
+	font-size: 14px
+}
+.info-box .progress {
+	background: rgba(0,0,0,0.2);
+	margin: 5px -10px 5px -10px;
+	height: 2px
+}
+.info-box .progress, .info-box .progress .progress-bar {
+	border-radius: 0
+}
+.info-box .progress .progress-bar {
+	background: #fff
+}
+.info-box-icon {
+	border-top-left-radius: 2px;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 2px;
+	display: block;
+	float: left;
+	height: 90px;
+	width: 90px;
+	text-align: center;
+	font-size: 45px;
+	line-height: 90px;
+	position:relative;
+	background: rgba(0,0,0,0.2)
+}
+.info-box-icon>img {
+	max-width: 100%
+}
+.info-box-content {
+	padding: 5px 10px;
+	margin-left: 90px
+}
+.info-box-number {
+	display: block;
+	font-weight: bold;
+	font-size: 18px
+}
+
+.bg-aqua1{
+    background-color: #54b5e0 !important;
+}
+.bg-red1  {
+    background-color: #90c657 !important;
+}
+ 
+.bg-yellow1{
+    background-color: #f9a94a !important;
+}
+
+
+
+
+.bg-aqua{
+    background-color: #29a2d8 !important;
+}
+.bg-red  {
+    background-color: #76af3c !important;
+}
+ 
+.bg-yellow{
+    background-color: #f79319 !important;
+}
+.bg-yellow .info-box-icon{
+    background-color: #76af3c !important;
+}
+
+
+
+.info-box-icon i{
+	margin:20px 0 0 0;
+	color:#fff;
+	 
+}
+.clearFix{
+clear:both;
+
+}
+#chartdiv {
+	width		: 100%;
+	height		: 500px;
+	font-size	: 11px;
+}
+.percentLabel{
+    border: 2px solid #fff;
+    padding: 2px 7px 2px 7px;
+    border-radius: 19px;
+    background-color: #fff;
+    color: #000;
+    font-size: 11px;
+}
+.content .bg-aqua1 .percentLabel {
+    color: #29a2d8;
+}
+.content .bg-red1 .percentLabel {
+    color: #90c657;
+}
+.content .bg-yellow1 .percentLabel {
+    color: #f9a94a;
+}
+.clearFix .bg-red  {
+    background-color: #485B79 !important;
+}
+.clearFix .bg-aqua .info-box-icon {
+    background-color: #344557 !important;
+}
+.clearFix .bg-aqua {
+    background-color: #54b5e0 !important;
+}
+.clearFix .bg-yellow .percentLabel {
+    color: #76af3c !important;
+}
+.clearFix .bg-aqua .percentLabel{
+    background-color: #344557 !important;
+    color: #ffffff;
+    border: 2px solid #344557;
+}
+.fa-angle-double-left,.fa-angle-double-right{
+    font-size: 20px;
+}
+.topNavDiv{
+    background-color: #f5f5f5;
+    padding: 8px 0 1px 4px;
+}
+.fa.fa-info-circle{
+    color:#54b5e0;
+    font-size: 12px;
+}
+ body{
+   margin:0px;
+}
