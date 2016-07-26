@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Score order</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="scripts/script.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
+</head>
+<body ng-controller="DealItemsController as vm">
+<div class="container">
+    <h1> Score Groups</h1>
+    <table >
+        <tbody ng-repeat="val in vm.rangeList" >
+            <tr class="heading" ng-if="$index !== vm.rangeList.length-1 && vm.dealList[$index].length !== 0 " >
+                <td colspan="2">{{val}}</td>
+            </tr>
+        <tr class="groups" ng-if="$index !== vm.rangeList.length-1 && vm.dealList[$index].length !== 0 "  ng-repeat="data in vm.dealList[$index]" >
+            <td>{{data.title}}</td>
+            <td>{{data.metacriticScore}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+</body>
+</html>

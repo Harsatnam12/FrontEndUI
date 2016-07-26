@@ -1,0 +1,21 @@
+table{
+	border-collapse:collapse;
+}
+
+table td{
+	padding: 8px;
+}
+table tbody{
+	border: 1px solid #dddddd;
+}
+
+.heading{
+	border-bottom: 1px dashed #ddd;
+	font-weight: bold;
+}
+.groups{
+	border-bottom: 1px solid #ddd;
+}
+tbody .groups:last-child{
+	border-bottom:none;
+}
